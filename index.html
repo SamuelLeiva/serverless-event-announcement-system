@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Announcement System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+    <header class="bg-blue-600 text-white py-6 shadow-md">
+      <h1 class="text-3xl font-bold text-center">Event Announcement System</h1>
+    </header>
+
+    <main class="flex-1 container mx-auto px-4 py-8 grid gap-10 md:grid-cols-2">
+      <!-- Formulario de suscripción -->
+      <section class="bg-white p-6 rounded-2xl shadow-md">
+        <h2 class="text-xl font-semibold mb-4 text-blue-700">Subscribe</h2>
+        <form id="subscribe-form" class="space-y-4">
+          <input
+            type="email"
+            id="subscribe-email"
+            placeholder="Your email address"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Subscribe
+          </button>
+        </form>
+        <p id="subscribe-message" class="mt-3 text-sm text-green-600"></p>
+      </section>
+
+      <!-- Formulario de creación de evento -->
+      <section class="bg-white p-6 rounded-2xl shadow-md">
+        <h2 class="text-xl font-semibold mb-4 text-blue-700">Create Event</h2>
+        <form id="event-form" class="space-y-4">
+          <input
+            type="text"
+            id="event-title"
+            placeholder="Event title"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+          <textarea
+            id="event-description"
+            placeholder="Event description"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+          ></textarea>
+          <input
+            type="date"
+            id="event-date"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+          />
+          <button
+            type="submit"
+            class="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition"
+          >
+            Create Event
+          </button>
+        </form>
+        <p id="event-message" class="mt-3 text-sm text-green-600"></p>
+      </section>
+    </main>
+
+    <!-- Lista de eventos -->
+    <section class="container mx-auto px-4 pb-10">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-700">Upcoming Events</h2>
+      <div id="events-list" class="grid gap-4 md:grid-cols-2"></div>
+    </section>
+
+    <footer class="bg-gray-800 text-white text-center py-4">
+      <p>© 2025 Event Announcement System</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
